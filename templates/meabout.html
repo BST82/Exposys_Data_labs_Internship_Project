@@ -1,0 +1,295 @@
+{% extends 'base.html' %}
+
+{% block title %}Projects{% endblock title %}
+
+{% block body%}
+
+<style>* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height:100%;
+  }
+  
+  
+  body {
+    margin:0;
+    background:	#4169E1;
+    font-size:1.3em;
+    color:#333;
+    font-family:'Open Sans', sans-serif;
+  }
+  
+  section {
+    float:left;
+    width:100%;
+    background:#fff;
+    position:relative;
+    box-shadow:0 0 5px 0px #333;
+  }
+  
+  
+  /* the important styles */
+  
+  .arrow-wrap {
+    position:absolute;
+    z-index:1;
+    left:50%;
+    top:-5em;
+    margin-left:-5em;
+    background:#111;
+    width:10em;
+    height:10em;
+    padding:4em 2em;
+    border-radius:50%;
+    font-size:0.5em;
+    display:block;
+    box-shadow:0px 0px 5px 0px #333;
+  }
+  
+  .arrow {
+    float:left;
+    position:relative;
+    width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 3em 3em 0 3em;
+  border-color: #ffffff transparent transparent transparent;
+    -webkit-transform:rotate(360deg)
+  }
+  
+  .arrow:after {
+    content:'';
+    position:absolute;
+    top:-3.2em;
+    left:-3em;
+    width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 3em 3em 0 3em;
+  border-color: #111 transparent transparent transparent;
+    -webkit-transform:rotate(360deg)
+  }
+  
+  
+  .hint {
+    position:absolute;
+    top:0.6em;
+    width:100%;
+    left:0;
+    font-size:2em;
+    font-style:italic;
+    text-align:center;
+    color:#fff;
+    opacity:0;
+  }
+  
+  
+  .arrow-wrap:hover .hint {
+    opacity:1;
+  }
+  
+  
+    @-webkit-keyframes arrows {
+      0% { top:0; }
+      10% { top:12%; }
+      20% { top:0; }
+      30% { top:12%; }
+      40% { top:-12%; }
+      50% { top:12%; }
+      60% { top:0; }
+      70% { top:12%; }
+      80% { top:-12%; }
+      90% { top:12%; }
+      100% { top:0; }
+    }
+    
+    .arrow-wrap .arrow {
+      -webkit-animation: arrows 2.8s 0.4s;
+      -webkit-animation-delay: 3s;
+    }
+  
+  
+  
+  
+  
+  /*  this is the unimportant CSS used just to layout the content  */
+  
+  
+  
+  header {
+    float:left;
+    width:100%;
+    padding:2em 4em;
+    color:#fff;
+    height:calc(100% - 3em);
+  }
+  
+  header h1 {
+    margin:0;
+  }
+  header h3 {
+    margin:0;
+    color: #56dcee ;
+  }
+  
+  header a {
+    color:#56dcee;
+    opacity:0.5;
+    text-decoration:none;
+  }
+  
+  header a:hover {
+    color:#333;
+    opacity:1;
+  }
+  
+  
+  .content {
+    float:left;
+    width:70%;
+    margin:0 15%;
+    padding:2em 0;
+  }
+  
+  h1 {
+    font-family:'Maven Pro', sans-serif;
+    font-weight:300;
+    font-size:2.4em;
+  }
+  
+  h2, h3 {
+    font-family:'Maven Pro', sans-serif;
+    font-weight:300;
+    font-size:1.5em;
+    margin-top:2em;
+  }
+  
+  pre {
+    background:#ededed;
+    padding:1em;
+  }
+  
+  p {
+    color:#555;
+    font-size:0.9em;
+  }
+  
+  p a {
+    color:#14b5d1;
+    text-decoration:none;
+  }
+  
+</style>
+<script>
+    //this is where we apply opacity to the arrow
+$(window).scroll( function(){
+
+    //get scroll position
+    var topWindow = $(window).scrollTop();
+    //multipl by 1.5 so the arrow will become transparent half-way up the page
+    var topWindow = topWindow * 1.5;
+    
+    //get height of window
+    var windowHeight = $(window).height();
+        
+    //set position as percentage of how far the user has scrolled 
+    var position = topWindow / windowHeight;
+    //invert the percentage
+    position = 1 - position;
+  
+    //define arrow opacity as based on how far up the page the user has scrolled
+    //no scrolling = 1, half-way up the page = 0
+    $('.arrow-wrap').css('opacity', position);
+  
+  });
+  
+  //Code stolen from css-tricks for smooth scrolling:
+  $(function() {
+    $('a[href*=#]:not([href=#])').click(function() {
+      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+        if (target.length) {
+          $('html,body').animate({
+            scrollTop: target.offset().top
+          }, 1000);
+          return false;
+        }
+      }
+    });
+  });
+</script>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans|Maven+Pro:500' rel='stylesheet' type='text/css'>
+
+<header>
+  <h1>Bhagya Shri Tamrakar</h1>
+  <h3>
+     Btech in Information Technology from state government college, Rajkiya Engineering College Azamgarh(Dr.A.P.J Abdul Kalam Technical University).
+  </h3>
+  <h3>2018 - 2022 </h3>
+  <a href="#">bt7355711982@gmail.com</a>
+</header>
+
+
+<section class="main">
+<a class="arrow-wrap" href="#content">
+<span class="arrow"></span>
+<!--<span class="hint">scroll</span>-->
+</a>
+  
+  <div class="content" id="content">
+    <h1>Introduction</h1>
+    <p>In preface I'M going to tell all about myself such as earlier study,graduation,skill,merit,demerit,hobbies, and achievements.</p>
+    
+      <h2>My Schooling </h2>
+    <p>High School & intermediate</p>
+    <pre>I have completed my high school with 82.33% and intermediate with 76.2% from <br>Ram Swaroop Siya Dulary Sarvodya Vidhyalay Kanpur(RSSDSV)</pre>
+
+    <p>
+      <p>
+        <h2>My Undergraduation</h2>
+      <p>Bachelor Of Engineering</p>
+      <pre>Currently I am pursuing in Btech in Information Technology From Rajkiya Engineering<br>College Azamgarh which is affiliated by Dr.A.P.J Abdul Kalam Technical University.<br>2018-2022 Batch
+      </pre>
+      
+      <p>
+      <h2>My Skills</h2>
+    <p>There are my few skills</p>
+    <pre>My skills are including C++, I like this programming language for solving questions.<br>Web-development In this I worked with HTML, CSS and JAVA-SCRIPT and uploaded my<br>works on GITHUB.I learnt DJANGO with python for making websites.Also worked on<br>Android App development with KOTLIN and JAVA.</pre>
+    <p>
+      <h2>My Merits</h2>
+    <p>These are my merits</p>
+    <pre>My personality consist of Responsible, Punctual and Hard Work.<br>I like to help people.Flexible on work.Can handle pressure when I have to do a <br>lots of work.I always thrilled to learn new skills and this is my one of the<br>fevorit work.</pre>
+    <p>
+      <p>
+        <h2>My Demerits</h2>
+      <p>These are my demerits</p>
+      <pre>I am shy in nature.<br>Weekness in coding but always try to keep practicing.<br></pre>
+      <!---->
+      <p>
+        <h2>My Hobbies</h2>
+      <p>These are my hobbies</p>
+      <pre>I like listening music ,travelling in hills ,fortest and temples.I love to listening<br>biographies</pre>
+      <p>
+      
+    <p>
+        <h2>My achievements</h2>
+      <p>These are my achievements</p>
+      <pre>Hacker rank 3 star in c++ , 2 star in python, Code shef 2 star.</pre>
+      <p>
+     <!---->
+     <div class="demo-wrapper">
+
+     <!---->
+    </p>
+  </div>
+  
+</section>
+
+
+
+    {% endblock body %}

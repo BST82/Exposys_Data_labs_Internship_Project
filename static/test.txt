@@ -1,0 +1,5 @@
+This is static file koe bhi server pr a ke dekh skta hai
+
+public hota hai.
+
+security ka kuch mat rakhnaa es file me.

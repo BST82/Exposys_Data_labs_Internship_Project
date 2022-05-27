@@ -1,0 +1,208 @@
+{% extends 'base.html' %}
+
+{% block title %}About me{% endblock title %}
+
+{% block body%}
+
+<style>
+    body {
+        background:#AFEEEE;
+      }
+      
+      
+      .skills {
+        position: absolute;
+        top: 65%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background:	#F0FFFF;
+        border-radius: 10px;
+        box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+      }
+      
+      .skills-bar {
+        padding: 25px 30px;
+      }
+      
+      .skills-bar .bar {
+        margin: 25px 0;
+      }
+      
+      .skills-bar .bar .info span {
+        font-size: 1rem;
+        font-weight: 500;
+      }
+      
+      .skills-bar .bar .info {
+        margin-bottom: 8px;
+        color: 	#000000;
+        
+      }
+      
+      .skills-bar .bar .progress-line {
+        position: relative;
+        height: 10px;
+        width: 550px;
+        background: 	#A9A9A9;
+        border-radius: 10px;
+        transform: scaleX(0);
+        transform-origin: left;
+        animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+      }
+      
+      .bar .progress-line span {
+        position: absolute;
+        background:#00BFFF;
+        height: 100%;
+        border-radius: 10px;
+        transform: scaleX(0);
+        transform-origin: left;
+        text-transfrom = uppercase;
+        animation: animate 1s 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+      }
+      
+      @keyframes animate {
+        100% {
+          transform: scaleX(1);
+        }
+      }
+      
+      .progress-line .html {
+        width: 80%;
+      }
+      .progress-line .css {
+        width: 70%;
+      }
+      .progress-line .bootstrap {
+        width: 55%;
+      }
+      .progress-line .javascript {
+        width: 50%;
+      }
+      .progress-line .c {
+        width: 65%;
+      }
+      .progress-line .a {
+        width: 55%;
+      }
+      .progress-line .m {
+        width: 40%;
+      }
+      .bar .progress-line span::before {
+        position: absolute;
+        content: "";
+        height: 0;
+        right: 0;
+        top: -14px;
+        width: 0;
+        border: 7px solid transparent;
+        border-bottom-width: 0px;
+        border-right-width: 0px;
+        border-top-style: #f0f0f0;
+        border-top-color: #07374a;
+      }
+      
+      .bar .progress-line span::after {
+        position: absolute;
+        right: 0;
+        top: -28px;
+        color: #f0f0f0;
+        font-size: 12px;
+        font-weight: 700;
+        background: #07374a;
+        padding: 1px 8px;
+        border-radius: 3px;
+      }
+      
+      
+      .progress-line .html::after {
+        content: "80%";
+      }
+      .progress-line .css::after {
+        content: "70%";
+      }
+      .progress-line .bootstrap::after {
+        content: "55%";
+      }
+      .progress-line .javascript::after {
+        content: "50%";
+      }
+      .progress-line .c::after {
+        content: "65%";
+      }
+    
+    .progress-line .a::after {
+      content: "55%";
+    }
+    .progress-line .m::after {
+      content: "40%";
+    }
+      /* ////........Media Query........//// */
+      
+      @media (max-width: 700px) {
+          .skills{
+              width: 80%;
+          }
+      
+          .skills-bar .bar .progress-line{
+              width: 100%;
+          }
+      }      
+</style>
+<section>
+<h1 class="text-center">Skills</h1>
+    <div class="skills">
+      <div class="skills-bar">
+        <div class="bar">
+          <div class="info">
+            <span>HTML</span>
+          </div>
+          <div class="progress-line"><span class="html"></span></div>
+          <div class="bar">
+            <div class="info">
+              <span>CSS</span>
+            </div>
+            <div class="progress-line"><span class="css"></span></div>
+            <div class="bar">
+              <div class="info">
+                <span>BOOTSTRAP</span>
+              </div>
+              <div class="progress-line"><span class="bootstrap"></span></div>
+              <div class="bar">
+                <div class="info">
+                  <span>JAVASCRIPT</span>
+                </div>
+                <div class="progress-line">
+                  <span class="javascript"></span>
+                </div>
+                
+                <div class="bar">
+                  <div class="info">
+                    <span>C++ PROGRAMMING</span>
+                  </div>
+                  <div class="progress-line"><span class="c"></span></div>
+                </div>
+
+                <div class="bar">
+                  <div class="info">
+                    <span>Android Studio</span>
+                  </div>
+                  <div class="progress-line"><span class="a"></span></div>
+                </div>
+                <div class="bar">
+                  <div class="info">
+                    <span>Mysql</span>
+                  </div>
+                  <div class="progress-line"><span class="m"></span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<script>
+</script>
+    
+    {% endblock body %}

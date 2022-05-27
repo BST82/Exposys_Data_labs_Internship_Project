@@ -1,0 +1,192 @@
+{% extends 'base.html' %}
+
+{% load static %} 
+<link rel="stylesheet" href="{% static ' /static/typing.css' %}">
+{% block title %}Home{% endblock title %}
+
+
+{% block body%}
+
+<style> 
+  body {
+   background-color:#6a9ac4;
+    height: 100%;
+    font-family: 'tradegothiclt-bold', sans-serif;
+  }
+  
+  h1 {
+    font-size: 3em;
+    color: black;
+    text-transform: uppercase;
+  }
+  
+  span {
+    border-right: .05em solid;
+    animation: caret 1s steps(1) infinite;
+  }
+  
+  @keyframes caret {
+    50% {
+      border-color: transparent;
+    }
+  }
+  
+</style>
+
+<div class="container-fluid my-4" >
+  <div class="container my-5">
+    <div class="row">
+      <div class="col-lg-6">
+        <img class="w-100 shadow " src="/static/images/bst.jpeg"/>
+      </div>
+      <div class="col-lg-6">
+        <div class="p-5 mt-4">
+         
+          <h1 display-4>Hey I am Bhagyashri</h1>
+           
+            
+            <p class="lead">As a fresher looking for opportunity in reputed organization to make my future bright.I want to work as a web developer & android app developer also want to join an organization where my skills must be enhance. </p>
+            <a href="/meabout" class="btn btn-outline-dark">Read More</a>
+          </div>
+      </div>
+  </div>
+
+</div>
+<!--  next section start  -->
+
+
+
+
+  
+
+</style>
+
+
+  
+</div>
+<!--java script for the grid start-->
+
+<script>
+
+
+</script>
+
+<!--java script for the grid end-->
+
+<!-- next section end -->
+<script>
+  document.addEventListener('DOMContentLoaded',function(event){
+    // array with texts to type in typewriter
+    var dataText = [ "Hey There", "I'M Bhagya shri tamrakar", "html,css" ,"java-script", "c++,python","android development"];
+    
+    // type one text in the typwriter
+    // keeps calling itself until the text is finished
+    function typeWriter(text, i, fnCallback) {
+      // chekc if text isn't finished yet
+      if (i < (text.length)) {
+        // add next character to h1
+       document.querySelector("h1").innerHTML = text.substring(0, i+1) +'<span aria-hidden="true"></span>';
+  
+        // wait for a while and call this function again for next character
+        setTimeout(function() {
+          typeWriter(text, i + 1, fnCallback)
+        }, 100);
+      }
+      // text finished, call callback if there is a callback function
+      else if (typeof fnCallback == 'function') {
+        // call callback after timeout
+        setTimeout(fnCallback, 700);
+      }
+    }
+    // start a typewriter animation for a text in the dataText array
+     function StartTextAnimation(i) {
+       if (typeof dataText[i] == 'undefined'){
+          setTimeout(function() {
+            StartTextAnimation(0);
+          }, 2000);
+       }
+       // check if dataText[i] exists
+      if (i < dataText[i].length) {
+        // text exists! start typewriter animation
+       typeWriter(dataText[i], 0, function(){
+         // after callback (and whole text has been animated), start next text
+         StartTextAnimation(i + 1);
+       });
+      }
+    }
+    // start the text animation
+    StartTextAnimation(0);
+  });
+</script>
+
+<!--fooooooooter start-->
+
+<div>
+	<footer class=" text-center text-white">
+	  <div class="container p-4 pb-0">
+		<section class="mb-4">
+		  
+		  <!-- Twitter -->
+		  <a
+			class="btn btn-primary btn-floating m-1"
+			style="background-color: #55acee;"
+			href="https://twitter.com/BHAGYASHRITAMR2?s=08"
+			role="button"
+			><i class="fab fa-twitter"></i
+		  ></a>
+	
+		  <!-- Google -->
+		  <a
+			class="btn btn-primary btn-floating m-1"
+			style="background-color: #dd4b39;"
+			href="/contact"
+			role="button"
+			><i class="fab fa-google"></i
+		  ></a>
+	
+		  <!-- Instagram -->
+		  <a
+			class="btn btn-primary btn-floating m-1"
+			style="background-color: #ac2bac;"
+			href="#!"
+			role="button"
+			><i class="fab fa-instagram"></i
+		  ></a>
+	
+		  <!-- Linkedin -->
+		  <a
+			class="btn btn-primary btn-floating m-1"
+			style="background-color: #0082ca;"
+			href="https://www.linkedin.com/in/bhagyashri-tamrakar-529527194/"
+			role="button"
+			><i class="fab fa-linkedin-in"></i
+		  ></a>
+		  <!-- Github -->
+		  <a
+			class="btn btn-primary btn-floating m-1"
+			style="background-color: #333333;"
+			href="https://github.com/BST82"
+			role="button"
+			><i class="fab fa-github"></i
+		  ></a>
+		</section>
+	  
+		<!-- Section: Social media -->
+	  </div>
+	  <!-- Grid container -->
+	
+	  <!-- Copyright -->
+	  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+		© 2022 Internship work for Exposysdatalabe by Bhagya Shri Tamrakar
+		<a class="text-white" href="#">Bt7355711982@gmail.com</a>
+	  </div>
+	  <!-- Copyright -->
+	</footer>
+	  
+	</div>
+	<!-- End of .container -->
+	<!--foooooooter end-->
+	
+	  
+{% endblock body %}
+
